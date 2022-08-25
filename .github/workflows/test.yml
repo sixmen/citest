@@ -1,0 +1,21 @@
+on:
+  workflow_dispatch:
+    inputs:
+      user_name:
+        description: 배포한 사용자
+        required: true
+      stage:
+        type: choice
+        options:
+        - production
+        - alpha
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: |
+          echo $INPUT_USER_NAME
+          echo $INPUT_STAGE
+          
