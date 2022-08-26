@@ -21,4 +21,4 @@ jobs:
           echo 2 $INPUT_stage
           echo 3 ${{ inputs.stage }}
           echo 4 ${{ inputs.user_name }}
-          
+          env
