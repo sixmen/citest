@@ -13,9 +13,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: abcd ${{ inputs.stage }}
 
     steps:
       - run: |
-          echo $INPUT_USER_NAME
-          echo $INPUT_STAGE
+          echo 1 $INPUT_user_name
+          echo 2 $INPUT_stage
+          echo 3 ${{ inputs.stage }}
+          echo 4 ${{ inputs.user_name }}
           
