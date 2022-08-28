@@ -17,7 +17,7 @@ on:
 jobs:
   build:
     name: abcd ${{ inputs.stage }}
-    uses: ./.github/workflows/module/sub.yml
+    uses: ./.github/workflows/sub.yml
     with:
       user_name: ${{ inputs.user_name }}
       stage: ${{ inputs.stage }}
