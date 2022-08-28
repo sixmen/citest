@@ -16,7 +16,7 @@ on:
 jobs:
   sub:
     runs-on: ubuntu-latest
-    name: abcd ${{ inputs.stage }} / ${{ inputs.branch || github.ref_name }}
+    name: subname ${{ inputs.stage }} / ${{ inputs.branch || github.ref_name }}
 
     steps:
       - run: |
