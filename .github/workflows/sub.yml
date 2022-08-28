@@ -1,16 +1,14 @@
 name: sub
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       user_name:
         description: 배포한 사용자
         required: true
+        type: string
       stage:
-        type: choice
-        options:
-        - production
-        - alpha
+        type: string
       branch:
         description: 브랜치
         type: string
