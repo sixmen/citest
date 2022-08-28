@@ -1,3 +1,5 @@
+name: test
+
 on:
   workflow_dispatch:
     inputs:
@@ -9,16 +11,15 @@ on:
         options:
         - production
         - alpha
+      branch:
+        type: string
 
 jobs:
   build:
-    runs-on: ubuntu-latest
     name: abcd ${{ inputs.stage }}
-
-    steps:
-      - run: |
-          echo 1 $INPUT_user_name
-          echo 2 $INPUT_stage
-          echo 3 ${{ inputs.stage }}
-          echo 4 ${{ inputs.user_name }}
-          env
+    uses: ./.github/workflows/module/sub.yml
+    with:
+      user_name: ${{ inputs.user_name }}
+      stage: ${{ inputs.stage }}
+      branch: ${{ inputs.branch }}
+  
