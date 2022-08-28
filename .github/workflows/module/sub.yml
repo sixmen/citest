@@ -1,0 +1,27 @@
+name: sub
+
+on:
+  workflow_dispatch:
+    inputs:
+      user_name:
+        description: 배포한 사용자
+        required: true
+      stage:
+        type: choice
+        options:
+        - production
+        - alpha
+      branch:
+        description: 브랜치
+        type: string
+
+jobs:
+  sub:
+    runs-on: ubuntu-latest
+    name: abcd ${{ inputs.stage }} / ${{ inputs.branch || github.ref_name }}
+
+    steps:
+      - run: |
+          echo ${{ inputs.stage }}
+          echo ${{ inputs.user_name }}
+          echo ${{ inputs.branch || github.ref_name }}
