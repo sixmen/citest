@@ -12,6 +12,8 @@ on:
       branch:
         description: 브랜치
         type: string
+      message:
+        type: string
 
 jobs:
   sub:
@@ -23,3 +25,5 @@ jobs:
           echo ${{ inputs.stage }}
           echo ${{ inputs.user_name }}
           echo ${{ inputs.branch || github.ref_name }}
+          echo ${{ inputs.message }}
+          echo ${{ toJSON(inputs.message) }}
