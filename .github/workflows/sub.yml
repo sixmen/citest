@@ -26,4 +26,4 @@ jobs:
           echo ${{ inputs.user_name }}
           echo ${{ inputs.branch || github.ref_name }}
           echo '{"messaeg": "${{ inputs.message }}"}'
-          echo '{"messaeg": "${{ toJSON(inputs.message) }}"}'
+          echo '{"messaeg": ${{ toJSON(inputs.message) }}}'
