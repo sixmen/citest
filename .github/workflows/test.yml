@@ -13,6 +13,8 @@ on:
         - alpha
       branch:
         type: string
+      message:
+        type: string
 
 jobs:
   build:
@@ -22,4 +24,4 @@ jobs:
       user_name: ${{ inputs.user_name }}
       stage: ${{ inputs.stage }}
       branch: ${{ inputs.branch }}
-  
+      message: ${{ inputs.message }}
