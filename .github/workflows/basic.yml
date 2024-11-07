@@ -24,4 +24,4 @@ jobs:
           echo test, and deploy your project.
 
   call-sub:
-    uses: ./.github/workflows/sub/sub1.yml
+    uses: ./.github/workflows/sub1.yml
