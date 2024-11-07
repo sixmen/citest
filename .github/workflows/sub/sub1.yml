@@ -1,0 +1,10 @@
+name: sub workflow
+
+on:
+  workflow_call:
+
+jobs:
+  sub1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Sub1 Run"
